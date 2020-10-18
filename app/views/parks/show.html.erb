@@ -1,0 +1,11 @@
+<h2>Total Parks: <%= @total_parks_found %></h2>
+<% @parks.each do |park| %>
+  <h3><%= park.full_name %></h3>
+  <p><%= park.description %></p>
+  <% park.park_hours.each do |day| %>
+    <ul>
+      <li><%= day.first.capitalize %> - <%= day.last %></li>
+    </ul>
+  <% end %>
+  <p>Directions: <%= park.direction_info %><p><br>
+<% end %>
